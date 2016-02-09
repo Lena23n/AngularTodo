@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular ToDo List</title>
+    <link rel="stylesheet" href="assets/css/main.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/fonts/dumbledor/stylesheet.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/fonts/corsiva/styles.css" type="text/css"/>
+</head>
+<body>
+<div class="application">
+    <div class="stared-background">
+        <header>Dream List</header>
+        <div ng-controller="TodoController as todoController">
+            <!-- todoController -->
+
+            <todo-header newTodo="todoController.newText" add="todoController.addTodo(text)"></todo-header>
+
+            <todo-list todos="todoController.todos" delete-item="todoController.deleteTodo(index)"
+                       edit-item="todoController.editTodo()"></todo-list>
+        </div>
+    </div>
+</div>
+
+<script src="libs/rx.all.js"></script>
+<script src="libs/angular.min.js"></script>
+<script src="app/services/todoService.js"></script>
+<script src="app/app.js"></script>
+<script src="app/app-controller.js"></script>
+<script src="app/todoHeader/todoHeader-directive.js"></script>
+<script src="app/todoList/todoList-directive.js"></script>
+</body>
+</html>

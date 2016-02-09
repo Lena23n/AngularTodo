@@ -1,0 +1,20 @@
+<!-- todoListController -->
+<div class="list-wrap">
+    <ul>
+        <li ng-repeat="todo in todoListController.todos" class="item-status-{{todo.done}}">
+            <div class="item-wrap">
+                <div class="item">
+                    <label class="item-status-{{todo.done}}">
+                        <input class="checkbox" type="checkbox" ng-model="todo.done" ng-change="todoListController.editItem()"/>
+                    </label>
+
+                    <div class="inner-text">{{ todo.text }}</div>
+                    <button class="delete-btn" ng-click="todoListController.deleteItem($index)"></button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+
